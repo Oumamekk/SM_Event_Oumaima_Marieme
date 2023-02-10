@@ -1,0 +1,58 @@
+
+<aside class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas_cart" >
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">Your cart </h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body" *ngFor="let cartItem of cartItems">
+
+    <figure class="itemside mb-4">
+      <div class="aside">
+        <img src="{{ cartItem.imageUrl }}" class="border img-sm rounded">
+      </div>
+      <figcaption class="info">
+        <a href="" class="btn btn-icon btn-light float-end"><i class="fa fa-trash"></i></a>
+        <p> {{ cartItem.name }}</p>
+        <span class="text-muted">{{ cartItem.quantity }} x {{ cartItem.unitPrice | currency }} </span> <br>
+        <div class="items">
+          <p>Quantity: </p>
+
+          <div class="row no-gutters">
+
+            <div class="col">
+              <button class="btn btn-primary btn-sm" (click)="onIncrementQuantity(cartItem)">
+                <i class="fa fa-plus"></i>
+              </button>
+            </div>
+
+            <div class="col ml-4 mr-2">
+              {{ cartItem.quantity }}
+            </div>
+
+            <div class="col">
+              <button class="btn btn-primary btn-sm" (click)="onDecrementQuantity(cartItem)">
+                <i class="fa fa-minus"></i>
+              </button>
+            </div>
+
+            <div class="col-8"></div>
+
+          </div>
+        </div>
+        <button class="btn btn-danger bt-sm mt-3" (click)="onRemove(cartItem)">
+          <i class="fa fa-trash-alt"></i>Remove
+        </button>
+
+        <p class="text-muted">Subtotal: {{ cartItem.quantity * cartItem.unitPrice | currency }}</p>
+      </figcaption>
+    </figure>
+
+  </div>
+  <div *ngIf="cartItems.length > 0">
+    <div class="mb-3">
+      <button class="btn w-100 btn-success"> Checkout </button>
+    </div>
+    <p class="mb-3 text-center"> <img src="assets/images/payments.webp" height="22">  </p>
+  </div>
+</aside>
+

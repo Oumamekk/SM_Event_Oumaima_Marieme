@@ -1,0 +1,21 @@
+<aside class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas_wishlist" >
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">Your wishlist </h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div *ngFor="let wishlistItem of wishlistItems">
+    <figure class="itemside mb-4">
+      <div class="aside">
+        <img src="{{ wishlistItem.imageUrl }}" class="border img-sm rounded">
+      </div>
+      <figcaption class="info">
+        <a href="" class="btn btn-icon btn-light float-end"><i class="fa fa-trash"></i></a>
+        <p> {{ wishlistItem.name }}</p>
+        <br>
+        <button class="btn btn-danger bt-sm mt-3" (click)="onRemove(wishlistItem)">
+          <i class="fa fa-trash-alt"></i>Remove
+        </button>
+      </figcaption>
+    </figure>
+  </div>
+</aside>
