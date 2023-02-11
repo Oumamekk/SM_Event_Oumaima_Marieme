@@ -1,15 +1,19 @@
-import { Product } from '../product/models/product.model';
+import { Product } from './product.model';
 
-export class WishlistItem {
+export class CartItem {
   id: number;
   name: string;
   imageUrl: string;
   unitPrice: number;
+
+  quantity: number;
 
   constructor(product: Product) {
     this.id = product.id;
     this.name = product.name;
     this.imageUrl = product.imageUrl;
     this.unitPrice = product.unitPrice;
+
+    this.quantity = 1;
   }
 }

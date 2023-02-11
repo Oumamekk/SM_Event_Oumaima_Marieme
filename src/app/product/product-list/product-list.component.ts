@@ -1,21 +1,18 @@
 import {Component, OnDestroy, OnInit, Input} from '@angular/core';
-import {Product} from "../models/product.model";
+import {Product} from "../../model/product.model";
 import {Subscription} from "rxjs";
-import {GetResponseProducts, ProductService} from "../product.service";
-import {CartService} from "../../cart/cart.service";
+import {GetResponseProducts, ProductService} from "../../service/product.service";
+import {CartService} from "../../service/cart.service";
 import {ActivatedRoute, ParamMap} from "@angular/router";
-import {CartItem} from "../../cart/cart-item.model";
-//import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
+import {CartItem} from "../../model/cart-item.model";
 import {ProductDetailsComponent} from "../product-details/product-details.component";
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import {NgForm} from "@angular/forms";
-import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
-import {WishlistService} from "../../wishlist/wishlist.service";
+import {WishlistService} from "../../service/wishlist.service";
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit, OnDestroy {
   products: Product[];

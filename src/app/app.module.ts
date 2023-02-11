@@ -8,7 +8,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { MenuComponent } from './menu/menu.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
 import { CartDetailsComponent } from './cart/cart-details/cart-details.component';
 import { CartStatusComponent } from './cart/cart-status/cart-status.component';
@@ -16,19 +15,20 @@ import { ProductDetailsComponent } from './product/product-details/product-detai
 import { ProductSearchComponent } from './product/product-search/product-search.component';
 import { WishlistDetailsComponent } from './wishlist/wishlist-details/wishlist-details.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { WishlistStatusComponent } from './wishlist/wishlist-status/wishlist-status.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    MenuComponent,
     ProductListComponent,
     CartDetailsComponent,
     CartStatusComponent,
     ProductDetailsComponent,
     ProductSearchComponent,
-    WishlistDetailsComponent
+    WishlistDetailsComponent,
+    WishlistStatusComponent
   ],
   imports: [
     BrowserModule,

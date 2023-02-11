@@ -1,13 +1,13 @@
 import { Component, OnDestroy, OnInit, Input} from '@angular/core';
-import {Observable, Subject, Subscription} from 'rxjs';
-//import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
+import { Subscription} from 'rxjs';
+
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 
-import { Product } from '../models/product.model';
-import { ProductService } from '../product.service';
+import { Product } from '../../model/product.model';
+import { ProductService } from '../../service/product.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { CartService } from '../../cart/cart.service';
-import { CartItem } from '../../cart/cart-item.model';
+import { CartService } from '../../service/cart.service';
+import { CartItem } from '../../model/cart-item.model';
 
 @Component({
   selector: 'app-product-details',
