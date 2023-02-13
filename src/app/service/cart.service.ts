@@ -6,12 +6,10 @@ import {CartItem} from '../model/cart-item.model';
   providedIn: 'root'
 })
 export class CartService {
-  cartItems: CartItem[] = [];
-  totalPrice = new Subject<number>();
-  totalQuantity = new Subject<number>();
+  public cartItems: CartItem[] = [];
+  public totalPrice = new Subject<number>();
+  public totalQuantity = new Subject<number>();
 
-  constructor() {
-  }
 
   addToCart(cartItem: CartItem) {
     let alreadyExists = false;

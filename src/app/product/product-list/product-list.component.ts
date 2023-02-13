@@ -1,13 +1,14 @@
 import {Component, OnDestroy, OnInit, Input} from '@angular/core';
 import {Product} from "../../model/product.model";
 import {Subscription} from "rxjs";
-import {GetResponseProducts, ProductService} from "../../service/product.service";
+import {ProductService} from "../../service/product.service";
 import {CartService} from "../../service/cart.service";
 import {ActivatedRoute, ParamMap} from "@angular/router";
 import {CartItem} from "../../model/cart-item.model";
 import {ProductDetailsComponent} from "../product-details/product-details.component";
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {WishlistService} from "../../service/wishlist.service";
+import {GetResponseProducts} from "../../model/productsResponse";
 
 @Component({
   selector: 'app-product-list',

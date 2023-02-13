@@ -1,28 +1,12 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
+import {Product} from '../model/product.model';
+import {ProductCategory} from '../model/product-category.model';
+import {GetResponseProducts} from "../model/productsResponse";
+import {GetResponseProductCategories} from "../model/productsCategoryResponse";
 
-import { Product } from '../model/product.model';
-import { ProductCategory } from '../model/product-category.model';
-
-export interface GetResponseProducts {
-
-    content: Product[];
-
-
-    size: number;
-    totalElements: number;
-    totalPages: number;
-    number: number;
-  numberOfElements: number;
-}
-
-interface GetResponseProductCategories {
-  _embedded: {
-    product_categories: ProductCategory[]
-  };
-}
 
 @Injectable({
   providedIn: 'root'

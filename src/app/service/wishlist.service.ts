@@ -1,14 +1,15 @@
-import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {Subject} from 'rxjs';
 
-import { WishlistItem} from '../model/wishlist.model';
+import {WishlistItem} from '../model/wishlist.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WishlistService {
-  wishlistItems: WishlistItem[] = [];
-  totalQuantity = new Subject<number>();
+  public wishlistItems: WishlistItem[] = [];
+  public totalQuantity = new Subject<number>();
+
   constructor() {
   }
 
