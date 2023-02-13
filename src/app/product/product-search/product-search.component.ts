@@ -1,18 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import {Component} from '@angular/core';
+import {NgForm} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-product-search',
   templateUrl: './product-search.component.html',
   styleUrls: ['./product-search.component.scss']
 })
-export class ProductSearchComponent implements OnInit {
+export class ProductSearchComponent {
 
   constructor(private router: Router) {
-  }
-
-  ngOnInit(): void {
   }
 
   onSearch(form: NgForm): void {

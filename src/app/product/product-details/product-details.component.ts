@@ -1,13 +1,11 @@
-import { Component, OnDestroy, OnInit, Input} from '@angular/core';
-import { Subscription} from 'rxjs';
-
+import {Component, OnDestroy, OnInit, Input} from '@angular/core';
+import {Subscription} from 'rxjs';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
-
-import { Product } from '../../model/product.model';
-import { ProductService } from '../../service/product.service';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { CartService } from '../../service/cart.service';
-import { CartItem } from '../../model/cart-item.model';
+import {Product} from '../../model/product.model';
+import {ProductService} from '../../service/product.service';
+import {ActivatedRoute, ParamMap} from '@angular/router';
+import {CartService} from '../../service/cart.service';
+import {CartItem} from '../../model/cart-item.model';
 
 @Component({
   selector: 'app-product-details',

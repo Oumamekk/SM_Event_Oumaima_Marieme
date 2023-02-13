@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {WishlistItem} from "../../model/wishlist.model";
 import {WishlistService} from "../../service/wishlist.service";
 
@@ -7,8 +7,8 @@ import {WishlistService} from "../../service/wishlist.service";
   templateUrl: './wishlist-details.component.html',
   styleUrls: ['./wishlist-details.component.scss']
 })
-export class WishlistDetailsComponent implements OnInit, OnDestroy {
-  wishlistItems: WishlistItem[] = [];
+export class WishlistDetailsComponent implements OnInit {
+  public wishlistItems: WishlistItem[] = [];
 
   constructor(private wishlistService: WishlistService) {
   }
@@ -22,8 +22,5 @@ export class WishlistDetailsComponent implements OnInit, OnDestroy {
     this.wishlistService.removeFromWishlist(wishlistItem);
   }
 
-  ngOnDestroy(): void {
-
-  }
 }
 

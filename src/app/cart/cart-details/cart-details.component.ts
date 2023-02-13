@@ -1,8 +1,7 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-
-import { CartItem } from '../../model/cart-item.model';
-import { CartService } from '../../service/cart.service';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Subscription} from 'rxjs';
+import {CartItem} from '../../model/cart-item.model';
+import {CartService} from '../../service/cart.service';
 
 @Component({
   selector: 'app-cart-details',
@@ -10,9 +9,9 @@ import { CartService } from '../../service/cart.service';
   styleUrls: ['./cart-details.component.scss']
 })
 export class CartDetailsComponent implements OnInit, OnDestroy {
-  cartItems: CartItem[] = [];
-  totalPrice = 0.00;
-  totalQuantity = 0;
+  public cartItems: CartItem[] = [];
+  public totalPrice = 0.00;
+  public totalQuantity = 0;
   private totalPriceSubscription: Subscription;
   private totalQuantitySubscription: Subscription;
 

@@ -9,14 +9,22 @@
         </div>
         <div class="order-lg-last col-lg-5 col-sm-8 col-8">
           <div class="float-end">
-            <a href="" class="btn btn-light" style="width: 91px;height: 63px;">
-              <i class="fa fa-user"></i>  <span class="ms-1 d-none d-sm-inline-block">Sign in  </span>
+            <a *ngIf="!authentified" routerLink="/register" class="btn btn-light">
+              <i class="fa fa-user"></i> <span class="ms-1 d-none d-sm-inline-block">Inscription </span>
             </a>
 
-            <a data-bs-toggle="offcanvas" href="#offcanvas_wishlist" class="btn btn-light" style="width: 91px;height: 63px;"  >
+            <a *ngIf="!authentified"  routerLink="/login" class="btn btn-light">
+              <i class="fa fa-user"></i> <span class="ms-1 d-none d-sm-inline-block">Connexion </span>
+            </a>
+
+            <a *ngIf="authentified"  (click)="logout()" routerLink="/" class="btn btn-light">
+              <i class="fa fa-user"></i> <span class="ms-1 d-none d-sm-inline-block">Déconnexion </span>
+            </a>
+
+            <a data-bs-toggle="offcanvas" href="#offcanvas_wishlist" class="btn btn-light">
               <i class="fa fa-heart"></i> <span class="ms-1"><app-wishlist-status></app-wishlist-status></span>
             </a>
-            <a data-bs-toggle="offcanvas" href="#offcanvas_cart" class="btn btn-light" style="width: 91px;height: 63px;">
+            <a data-bs-toggle="offcanvas" href="#offcanvas_cart" class="btn btn-light">
               <i class="fa fa-shopping-cart"></i> <span class="ms-1"><app-cart-status></app-cart-status></span>
             </a>
           </div>
@@ -37,19 +45,19 @@
       <div class="collapse navbar-collapse" id="navbar_main">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link ps-0" routerLink="/"> All </a>
+            <a class="nav-link ps-5" routerLink="/"> Tous les thèmes </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link ps-0" routerLink="/categories/4"> Anniversaire </a>
+            <a class="nav-link ps-5" routerLink="/categories/4"> Anniversaire </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link ps-0" routerLink="/categories/1"> Demande Mariage </a>
+            <a class="nav-link ps-5" routerLink="/categories/1"> Demande de mariage </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link ps-0" routerLink="/categories/3"> Guest Gift </a>
+            <a class="nav-link ps-5" routerLink="/categories/3"> Cadeaux invités </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link ps-0" routerLink="/categories/2"> Mariage </a>
+            <a class="nav-link ps-5" routerLink="/categories/2"> Mariage </a>
           </li>
 
         </ul>

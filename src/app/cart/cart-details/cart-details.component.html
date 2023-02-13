@@ -1,7 +1,6 @@
-
 <aside class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas_cart" >
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title">Your cart </h5>
+    <h5 class="offcanvas-title">Mon panier </h5>
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body" *ngFor="let cartItem of cartItems">
@@ -11,11 +10,10 @@
         <img src="{{ cartItem.imageUrl }}" class="border img-sm rounded">
       </div>
       <figcaption class="info">
-        <a href="" class="btn btn-icon btn-light float-end"><i class="fa fa-trash"></i></a>
         <p> {{ cartItem.name }}</p>
-        <span class="text-muted">{{ cartItem.quantity }} x {{ cartItem.unitPrice | currency }} </span> <br>
+        <span class="text-muted">{{ cartItem.quantity }} x {{ cartItem.unitPrice | currency:"EUR":"symbol" }} </span> <br>
         <div class="items">
-          <p>Quantity: </p>
+          <p>Quantité: </p>
 
           <div class="row no-gutters">
 
@@ -40,19 +38,19 @@
           </div>
         </div>
         <button class="btn btn-danger bt-sm mt-3" (click)="onRemove(cartItem)">
-          <i class="fa fa-trash-alt"></i>Remove
+          <i class="fa fa-trash-alt"></i>Supprimer
         </button>
 
-        <p class="text-muted">Subtotal: {{ cartItem.quantity * cartItem.unitPrice | currency }}</p>
+        <p class="text-muted">Total de ce produit: {{ cartItem.quantity * cartItem.unitPrice | currency:"EUR":"symbol" }}</p>
       </figcaption>
     </figure>
 
   </div>
   <div *ngIf="cartItems.length > 0">
     <div class="mb-3">
-      <button class="btn w-100 btn-success"> Checkout </button>
+      <button class="btn w-100 btn-success"> Réserver </button>
     </div>
-    <p class="mb-3 text-center"> <img src="assets/images/payments.webp" height="22">  </p>
+    <p class="mb-3 text-center"> <img id="payments" src="assets/images/payments.webp">  </p>
   </div>
 </aside>
 

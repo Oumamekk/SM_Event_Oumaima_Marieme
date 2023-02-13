@@ -1,11 +1,12 @@
-
 <section class="padding-y">
   <div class="container">
 
     <div class="row">
       <aside class="col-lg-3">
 
-        <button class="btn btn-outline-secondary mb-3 w-100  d-lg-none" data-bs-toggle="collapse" data-bs-target="#aside_filter">Show filter</button>
+        <button class="btn btn-outline-secondary mb-3 w-100  d-lg-none" data-bs-toggle="collapse"
+                data-bs-target="#aside_filter">Recherche
+        </button>
 
         <div id="aside_filter" class="collapse card d-lg-block mb-5">
 
@@ -14,8 +15,8 @@
               <div class="card-body">
                 <ul class="list-menu">
                   <li><a routerLink="/categories/4">Anniversaire </a></li>
-                  <li><a routerLink="/categories/1">Demande Mariage </a></li>
-                  <li><a routerLink="/categories/3">Guest Gift </a></li>
+                  <li><a routerLink="/categories/1">Demande de mariage </a></li>
+                  <li><a routerLink="/categories/3">Cadeaux invités </a></li>
                   <li><a routerLink="/categories/2">Mariage </a></li>
                 </ul>
               </div>
@@ -27,14 +28,14 @@
       <main class="col-lg-9">
 
         <header class="d-sm-flex align-items-center border-bottom mb-4 pb-3">
-          <strong class="d-block py-2">{{totalElements}} Items found </strong>
+          <strong class="d-block py-2">{{totalElements}} produits trouvés </strong>
         </header>
 
         <div *ngIf="!searchMode">
-          <h4>Category: {{ categoryName }}</h4>
+          <h4>Catégorie: {{ categoryName }}</h4>
         </div>
         <div *ngIf="searchMode">
-          <h4>Search for: {{ searchKeyword }}</h4>
+          <h4>Recherche: {{ searchKeyword }}</h4>
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6 col-sm-6" *ngFor="let product of products">
@@ -45,18 +46,20 @@
               </div>
               <figcaption class="info-wrap border-top">
                 <div class="price-wrap">
-                  <strong class="price">{{ product.unitPrice | currency }}</strong>
+                  <strong class="price">{{ product.unitPrice |currency:"EUR":"symbol" }}</strong>
                 </div>
-                <a (click)="open(product)" >
+                <a (click)="open(product)">
                   <p class="title mb-2">{{ product.name }} {{ product.id }}</p>
                 </a>
-                <button (click)="onAddToCart(product)" class="btn btn-primary"> <i class="fa fa-shopping-cart"></i></button>
-                <button (click)="onAddToWishlist(product)" class="btn btn-light btn-icon"> <i class="fa fa-heart"></i> </button>
+                <button (click)="onAddToCart(product)" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>
+                </button>
+                <button (click)="onAddToWishlist(product)" class="btn btn-light btn-icon"><i class="fa fa-heart"></i>
+                </button>
               </figcaption>
             </figure>
           </div>
           <div class="alert alert-warning col-md-12" *ngIf="products?.length === 0" role="alert">
-            No products found.
+            Aucun produit trouvé.
           </div>
         </div>
         <div class="footer-pagination" *ngIf="products!.length > 0">
@@ -75,7 +78,7 @@
             </div>
 
             <div class="col-md-3 mt-2">
-              <span class="mr-2">Page Size</span>
+              <span class="mr-2">Taille </span>
               <select (change)="onUpdatePageSize($event)">
                 <option selected>5</option>
                 <option>10</option>
@@ -85,7 +88,6 @@
             </div>
 
           </div>
-          <!-- Pagination end -->
 
         </div>
       </main>

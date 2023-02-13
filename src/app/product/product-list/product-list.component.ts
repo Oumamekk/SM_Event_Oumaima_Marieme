@@ -6,7 +6,7 @@ import {CartService} from "../../service/cart.service";
 import {ActivatedRoute, ParamMap} from "@angular/router";
 import {CartItem} from "../../model/cart-item.model";
 import {ProductDetailsComponent} from "../product-details/product-details.component";
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {WishlistService} from "../../service/wishlist.service";
 
 @Component({
@@ -15,17 +15,14 @@ import {WishlistService} from "../../service/wishlist.service";
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit, OnDestroy {
-  products: Product[];
-  searchMode: boolean;
-  categoryName: string;
+  public products: Product[];
+  public searchMode: boolean;
+  public categoryName: string;
   @Input() searchKeyword: string | null;
-  previousCategoryId: number;
-
-  // For pagination
-  pageNumber = 1;
-  pageSize = 4;
-  totalElements = 0;
-
+  public previousCategoryId: number;
+  public pageNumber = 1;
+  public pageSize = 4;
+  public totalElements = 0;
   private paramsSubscription: Subscription;
 
   constructor(private modalService: NgbModal,
@@ -59,7 +56,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
     }
   }
 
-  onUpdatePageSize(event:any): void {
+  onUpdatePageSize(event: any): void {
     this.pageSize = +event.target.value;
     this.pageNumber = 1;
     this.listProducts();
@@ -103,7 +100,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
     } else {
       this.fetchProducts();
-      this.categoryName = 'All';
+      this.categoryName = 'Tous les produits';
     }
   }
 

@@ -38,6 +38,7 @@ export class ProductService {
     return this.http.get<Product>(`${this.BASE_PRODUCTS_URL}/${productId}`);
   }
 
+
   getProductList(page: number, pageSize: number): Observable<GetResponseProducts> {
     return this.getProductsByCondition('?', page, pageSize);
   }

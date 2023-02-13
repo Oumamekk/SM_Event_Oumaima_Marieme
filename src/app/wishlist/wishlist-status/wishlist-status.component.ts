@@ -1,6 +1,5 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Subscription} from "rxjs";
-import {CartService} from "../../service/cart.service";
 import {WishlistItem} from "../../model/wishlist.model";
 import {WishlistService} from "../../service/wishlist.service";
 
@@ -9,10 +8,9 @@ import {WishlistService} from "../../service/wishlist.service";
   templateUrl: './wishlist-status.component.html',
   styleUrls: ['./wishlist-status.component.scss']
 })
-export class WishlistStatusComponent implements OnInit, OnDestroy {
-  wishlistItems: WishlistItem[] = [];
-  totalQuantity = 0;
-
+export class WishlistStatusComponent implements OnInit {
+  public wishlistItems: WishlistItem[] = [];
+  public totalQuantity = 0;
   private totalQuantitySubscription: Subscription;
 
   constructor(private wishlistService: WishlistService) {
@@ -29,7 +27,4 @@ export class WishlistStatusComponent implements OnInit, OnDestroy {
     this.wishlistService.removeFromWishlist(wishlistItem);
   }
 
-  ngOnDestroy(): void {
-
-  }
 }

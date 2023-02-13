@@ -1,7 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-
-import { CartService } from '../../service/cart.service';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Subscription} from 'rxjs';
+import {CartService} from '../../service/cart.service';
 
 @Component({
   selector: 'app-cart-status',
@@ -9,8 +8,8 @@ import { CartService } from '../../service/cart.service';
   styleUrls: ['./cart-status.component.scss']
 })
 export class CartStatusComponent implements OnInit, OnDestroy {
-  totalPrice = 0.00;
-  totalQuantity = 0;
+  public totalPrice = 0.00;
+  public totalQuantity = 0;
   private totalPriceSubscription: Subscription;
   private totalQuantitySubscription: Subscription;
 
