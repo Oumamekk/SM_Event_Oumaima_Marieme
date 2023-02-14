@@ -49,7 +49,7 @@
                   <strong class="price">{{ product.unitPrice |currency:"EUR":"symbol" }}</strong>
                 </div>
                 <a (click)="open(product)">
-                  <p class="title mb-2">{{ product.name }} {{ product.id }}</p>
+                  <p class="title mb-2">{{ product.name }}</p>
                 </a>
                 <button (click)="onAddToCart(product)" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>
                 </button>

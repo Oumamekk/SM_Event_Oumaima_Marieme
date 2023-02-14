@@ -7,6 +7,7 @@ import {LoginComponent} from "./login/login.component";
 import {RegistrationComponent} from "./registration/registration.component";
 import {HomeComponent} from "./home/home.component";
 
+
 const routes: Routes = [
   {path: 'cart', component: CartDetailsComponent},
   {path: 'search/:key', component: ProductListComponent},

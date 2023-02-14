@@ -24,7 +24,7 @@ export class RegistrationComponent {
       .pipe(first())
       .subscribe({
         next: (response) => {
-          alert(`Nous sommes heureux de vous compter parmi les membres de SM Event: ` + loginFormdata.value.email);
+          alert(`Nous sommes heureux de vous compter parmi les membres de SM Event. Connectez vous svp ` ) ;
         },
         error: (error) => {
           alert('Ce compte existe déja. Veuillez vous connecter');

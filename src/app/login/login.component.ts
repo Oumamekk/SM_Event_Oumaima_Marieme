@@ -26,7 +26,7 @@ export class LoginComponent{
       next: (response) => {
         this.loginService.setToken('token',response.id)
         alert(`Bienvenue: `+ loginFormdata.value.email);
-        this.router.navigate(['produits']);
+        this.router.navigate(['home']);
       },
       error: (error) => {
         alert('Veuillez vérifier vos informations de connexion');

@@ -3,9 +3,10 @@
     <div class="container">
       <div class="row gy-3 align-items-center">
         <div class="col-lg-2 col-sm-4 col-4">
-          <a routerLink="/" class="navbar-brand">
-            SM Event
+          <a routerLink="/home" >
+            <img id="logo" src="assets/images/logo.png"  alt="Logo SM Event">
           </a>
+
         </div>
         <div class="order-lg-last col-lg-5 col-sm-8 col-8">
           <div class="float-end">
@@ -17,7 +18,7 @@
               <i class="fa fa-user"></i> <span class="ms-1 d-none d-sm-inline-block">Connexion </span>
             </a>
 
-            <a *ngIf="authentified"  (click)="logout()" routerLink="/" class="btn btn-light">
+            <a *ngIf="authentified"  (click)="logout()" routerLink="/home" class="btn btn-light">
               <i class="fa fa-user"></i> <span class="ms-1 d-none d-sm-inline-block">Déconnexion </span>
             </a>
 

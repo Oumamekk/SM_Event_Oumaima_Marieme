@@ -1,0 +1,26 @@
+<div class="container">
+  <div>
+    <p>À chaque fête sa déco! <br>
+      Un mariage, un anniversaire, une demande… ça se fête !<br>
+      Chez <Strong>SM Event</Strong>  vous avez le choix sur toute une gamme variée d’accessoires de décoration pour embellir votre évènement. <br>
+      Des contenants pour vos cadeaux d’invités, à la décoration de table et de salle, vous retrouverez l’essentiel pour une décoration parfaite qui vous ressemble.
+    </p>
+  </div>
+  <br>
+  <div>
+<ngb-carousel>
+  <ng-template *ngFor="let image of images ; index as i" ngbSlide >
+    <div id="img">
+      <img [src]="image" alt="Homepage image {{i}}" />
+    </div>
+  </ng-template>
+</ngb-carousel>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div></div>
+</div>
+
+
+
